@@ -1,16 +1,18 @@
+"""
+Given two sinusoids of two different frequencies,
+Figure out how to change their frequencies at T such that at 2T, they would meet at the same value
+"""
 import numpy as np
 import matplotlib.pyplot as plt
-import math
 
 T = 4.06
 f1 = 1.2
 f2 = 2.1
 
-times = []
+times = np.arange(0, 2 * T + 0.01, 0.01)
 g1_vals = []
 g2_vals = []
-for t in np.arange(0, 2 * T + 0.01, 0.01):
-    times += [t]
+for t in times:
     # figure out constants for g1(t)
     c_for_g1 = T * (f1 - f2) / f2
     # check for equal sign
